@@ -1,0 +1,44 @@
+---
+title: "About this website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Here is REN XIN's awesome website, Welcome!!
+
+About this website is made in markdownn and Johnny R(REN XIN).
+# Here is REN XIN's awesome website, Welcome!!
+   <center>
+   <img src = "images/IMG_4456.JPG" style=" width:90%">
+   </center>
+   This is the photo I took out of my window yesterday. It's very beautiful, and I wanna share with you.
+
+# Introduction
+Name:XIN REN
+
+Hobby：Hiking、Fencing and skiing.
+
+There are some photo I took
+   <center>
+   <img src = "images/IMG_4457.JPG" style=" width:50%">
+   </center>
+   <center>
+   This photo was taken when I went on a trip last week.
+   </center>
+   <center>
+   <img src = "images/IMG_4458.JPG" style=" width:50%">
+   </center>
+   <center>
+   This is me in the process of fencing training!
+   </center>
+   <center>
+   <img src = "images/IMG_4459.JPG" style=" width:50%">
+   </center>
+   <center>
+   This is a photo I took at a snow park in China.
+   </center>
+
+
+

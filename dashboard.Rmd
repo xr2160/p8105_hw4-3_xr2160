@@ -1,0 +1,76 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(flexdashboard)
+data(rest_inspec)
+
+
+clean_rest_inspec =
+  rest_inspec %>% 
+  select(boro, dba, cuisine_description,zipcode, score, grade,street,phone) %>% 
+  filter(
+    !is.na(score),
+    boro == "MANHATTAN",
+    score %in% 0:200,
+  ) %>%
+  drop_na(grade, score) %>% 
+  mutate(cuisine_description = recode(cuisine_description,"Latin (Cuban, Dominican, Puerto Rican, South & Central American)" = "Latin food ","Bottled beverages, including water, sodas, juices, etc. "="Bottled beverages"))
+  
+Final_rest_df = sample_n(clean_rest_inspec,5000) 
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+Final_rest_df %>%
+  mutate(text_label = str_c("name: ", dba, "\nstreet: ", street,"\nzipcode",zipcode)) %>% 
+  plot_ly(
+     x = ~cuisine_description, y = ~score, type = "scatter", mode = "markers",
+    color = ~grade, text = ~text_label, alpha = 0.5)
+
+Final_rest_df
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+Final_rest_box = Final_rest_df %>%
+  mutate(cuisine_description = fct_reorder(cuisine_description, score)) %>%
+  plot_ly(
+    y = ~score, x = ~cuisine_description,color = ~grade,
+    type = "box", colors = "viridis"
+    )
+
+Final_rest_box
+```
+
+### Chart C
+
+```{r}
+Final_rest_barc = Final_rest_df %>% 
+  count(cuisine_description) %>% 
+  mutate(cuisine_description = fct_reorder(cuisine_description, n)) %>% 
+  plot_ly(x = ~cuisine_description, y = ~n, color = ~cuisine_description, type = "bar", colors = "viridis")
+
+Final_rest_barc
+```
+

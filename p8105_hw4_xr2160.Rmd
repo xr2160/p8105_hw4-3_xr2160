@@ -1,0 +1,15 @@
+---
+title: "P8105_hw4_REN XIN"
+output: github_document
+date: "2022-11-01"
+---
+```{r}
+library(tidyverse)
+library(readxl)
+library(dplyr)
+library(patchwork)
+library(ggplot2)
+```
+
+
+

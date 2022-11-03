@@ -1,0 +1,18 @@
+name: "REN XIN's website"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "About"
+      href: about.html
+    - text: "extra_page"
+      href: extra_page.html
+    - text: "Dashboard"
+      href: dashboard.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<xr2160@cumc.columbia.edu>
+    - icon: fa-github fa-lg
+      href: http://github.com/<p8105_hw4_xr2160>/
+output:
+  html_document:
+    theme: cosmo

@@ -1,0 +1,26 @@
+---
+title: "Here's an extra page"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Here is REN XIN's awesome website, Welcome!!
+
+
+
+
+   <center>
+   <img src = "images/IMG_4460.JPG" style=" width:60%">
+   </center>
+   
+   <center>
+    This is a discussion page, if you are interested in my hobby we can organize some activities together, if you are interested please contact me immediately.
+
+After this page I will post some daily exercise pictures to share with you!
+   </center>
+
+
+
+
